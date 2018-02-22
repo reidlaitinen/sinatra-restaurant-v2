@@ -1,0 +1,6 @@
+Each food item will have:
+  Name
+  Course
+  Price
+  Description
+
