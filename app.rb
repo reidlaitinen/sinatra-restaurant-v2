@@ -7,7 +7,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 require 'sinatra/base'
-require './models/app'
+require './models/item'
 
 
 class Restaurant < Sinatra::Base
@@ -17,10 +17,7 @@ class Restaurant < Sinatra::Base
   set :js_url, '/javascripts'
   set :views, Proc.new { File.join(root, "views") }
   register Sinatra::ActiveRecordExtension
+  use Rack::MethodOverride
   enable :sessions
-
-  get '/' do
-    'Hello Sinatra'
-  end
 
 end

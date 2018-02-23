@@ -11,7 +11,7 @@ class Restaurant < Sinatra::Base
   end
 
   # GET route for new item view
-  get '/items/new' do
+  get '/new' do
     erb :new
   end
 
@@ -21,9 +21,22 @@ class Restaurant < Sinatra::Base
     erb :items
   end
 
+  # GET route for item edit view
+  get "/items/:id/edit" do
+    @items = Item.find(params[:id])
+    erb :edit
+  end
+
+  # PUT route to update items
+  put "/apps/:id" do
+    item = Item.find(params[:id])
+    item.update(name: params[:name], desc: params[:desc], price: params[:price], course: params[:course])
+    redirect "/items"
+  end
+
   # POST route for creating item
   post "/items" do
-    App.create(name: params[:name], desc: params[:desc], price: params[:price], course:[course])
+    Item.create(name: params[:name], desc: params[:desc], price: params[:price], course: params[:course])
     redirect "/items"
   end
 

@@ -1,1 +1,16 @@
-<h1>Items Page</h1>
+<div class="row">
+  <% @items.each do |item| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= item.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= item.course %>, $<%= item.price %></h6>
+      <p class="card-text"><%= item.desc %></p>
+      <a class="btn btn-primary" href="/items/<%= item.id %>/edit">EDIT</a>
+      <form action="/apps/<%= app.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button class="btn btn-danger">DELETE</button>
+      </form>
+    </div>
+  </div>
+  <% end %>
+</div>
