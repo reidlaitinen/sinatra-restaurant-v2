@@ -11,8 +11,20 @@
   font-size: 60px;
 }
 
+.input-field {
+  justify-content: space-around;
+}
+
+.form-div {
+  justify-content: space-around;
+}
+
 .page-body {
   margin: 0px 10%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #navbar {
@@ -42,5 +54,61 @@
   border: 1px solid black;
   border-radius: 5px;
   width: 200px;
-  padding: 5%;
+  height: 400px;
+  text-overflow: ellipsis;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.card-body {
+  padding: 0px 10px;
+}
+.card-link {
+  text-decoration: none;
+}
+
+.card-subtitle {
+  font-size: 15px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  background-color: rgb(180, 180, 180);
+  width: 100%;
+  height: 25%;
+}
+
+.card-text {
+  text-overflow: ellipsis;
+}
+
+.card-footer {
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  height: 25%;
+  justify-content: space-around;
+}
+.desc-container {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-item {
+  align-self: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  border-style: 1px solid black;
+  border-radius: 5px;
+}
+
+.home-link {
+  text-decoration: none;
 }
